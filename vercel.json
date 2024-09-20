@@ -3,8 +3,7 @@
   "builds": [
     {
       "src": "package.json",
-      "use": "@vercel/next",
-      "config": { "devCommand": "npm run dev" }
+      "use": "@vercel/next"
     }
   ]
 }
