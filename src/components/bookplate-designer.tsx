@@ -2,13 +2,6 @@ import React, { useState, useEffect, useRef } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei'
 import dynamic from 'next/dynamic'
-import { Badge } from './3d-badge'
-
-const ThreeDBadge = dynamic(() => import('./3d-badge').then((mod) => mod.Badge), { ssr: false })
-
-const animals = ['Bat', 'Bear', 'Crow', 'Deer', 'Dolphin', 'Fox', 'Gecko', 'Moose', 'Moth', 'Owl', 'Rat', 'Skunk', 'Snake', 'Spider', 'Swan']
-const stamps = ['Bison', 'Crow', 'Eagle', 'Elk', 'Hedgehog', 'Meerkat', 'Monkey', 'Moose', 'Rooster', 'Salmon', 'Swan', 'Wolf']
-
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -16,6 +9,11 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Switch } from "@/components/ui/switch"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+
+const ThreeDBadge = dynamic(() => import('./3d-badge').then(mod => mod.Badge), { ssr: false })
+
+const animals = ['Bat', 'Bear', 'Crow', 'Deer', 'Dolphin', 'Fox', 'Gecko', 'Moose', 'Moth', 'Owl', 'Rat', 'Skunk', 'Snake', 'Spider', 'Swan']
+const stamps = ['Bison', 'Crow', 'Eagle', 'Elk', 'Hedgehog', 'Meerkat', 'Monkey', 'Moose', 'Rooster', 'Salmon', 'Swan', 'Wolf']
 
 export function BookplateDesigner() {
   const [name, setName] = useState<string>('Your Name')

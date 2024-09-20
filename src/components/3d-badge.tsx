@@ -31,13 +31,15 @@ function Band({ maxSpeed = 1, minSpeed = 0, darkMode = false, imageUrl }: BandPr
   const [texture] = useTexture(['/band.png'])
 
   useFrame((state, delta) => {
-    const t = state.clock.getElapsedTime()
-    band.current!.rotation.x = Math.sin(t) * Math.PI * 0.0125
-    band.current!.rotation.y = Math.cos(t) * Math.PI * 0.0125
-    band.current!.rotation.z += delta * 0.25
-    band.current!.position.y = Math.sin(t * 2) * 0.1
-    j1.current!.rotation.y += delta * 2
-    j2.current!.rotation.y += delta * 2
+    if (band.current && j1.current && j2.current) {
+      const t = state.clock.getElapsedTime()
+      band.current.rotation.x = Math.sin(t) * Math.PI * 0.0125
+      band.current.rotation.y = Math.cos(t) * Math.PI * 0.0125
+      band.current.rotation.z += delta * 0.25
+      band.current.position.y = Math.sin(t * 2) * 0.1
+      j1.current.rotation.y += delta * 2
+      j2.current.rotation.y += delta * 2
+    }
   })
 
   return (
@@ -50,8 +52,7 @@ function Band({ maxSpeed = 1, minSpeed = 0, darkMode = false, imageUrl }: BandPr
             roughness={1}
             transparent
             opacity={0.7}
-            side={THREE.Do
-ubleSide}
+            side={THREE.DoubleSide}
           />
         </mesh>
         <mesh>
