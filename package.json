@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
+    "start": "next start"
     "deploy": "vercel --prod"
   },
   "dependencies": {
@@ -34,7 +33,11 @@
     "@types/node": "^20.0.0",
     "@types/react": "^18.2.0",
     "@types/three": "^0.150.1",
+    "@typescript-eslint/eslint-plugin": "^8.6.0",
+    "@typescript-eslint/parser": "^8.6.0",
     "autoprefixer": "^10.4.14",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^14.2.13",
     "postcss": "^8.4.23",
     "tailwindcss": "^3.3.2",
     "typescript": "^5.0.0"
