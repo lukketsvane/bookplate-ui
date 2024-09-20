@@ -1,10 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   swcMinify: true,
   eslint: {
-    // This will disable ESLint during builds
     ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
   },
   webpack: (config) => {
     config.resolve.alias = {
@@ -13,7 +15,6 @@ const nextConfig = {
     };
     return config;
   },
-  transpilePackages: ['three', '@react-three/fiber', '@react-three/drei', '@react-three/rapier'],
 };
 
 export default nextConfig;

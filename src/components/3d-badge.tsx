@@ -50,7 +50,8 @@ function Band({ maxSpeed = 1, minSpeed = 0, darkMode = false, imageUrl }: BandPr
             roughness={1}
             transparent
             opacity={0.7}
-            side={THREE.DoubleSide}
+            side={THREE.Do
+ubleSide}
           />
         </mesh>
         <mesh>
