@@ -1,14 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    webpack: (config, { isServer }) => {
-      config.module.rules.push({
-        test: /\.svg$/,
-        issuer: /\.[jt]sx?$/,
-        use: ['@svgr/webpack'],
-      });
-      return config;
-    },
-  };
-  
-  export default nextConfig;
-  
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.(glb|gltf)$/,
+      type: 'asset/resource',
+    })
+    return config
+  },
+}
+
+export default nextConfig

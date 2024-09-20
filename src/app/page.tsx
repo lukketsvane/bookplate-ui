@@ -1,11 +1,19 @@
-import BookplateDesigner from '@/components/bookplate-designer'
+"use client"
+
+import dynamic from 'next/dynamic'
+import { Suspense } from 'react'
+
+const DynamicBookplateDesigner = dynamic(() => import('@/components/bookplate-designer').then(mod => mod.BookplateDesigner), {
+  loading: () => <p>Loading Bookplate Designer...</p>,
+  ssr: false
+})
 
 export default function Home() {
   return (
-    <main className="min-h-screen  py-8">
-      <div className="container mx-auto px-4">
-        <BookplateDesigner />
-      </div>
+    <main className="flex min-h-screen flex-col items-center justify-center bg-gray-50">
+      <Suspense fallback={<div>Loading...</div>}>
+        <DynamicBookplateDesigner />
+      </Suspense>
     </main>
   )
 }
