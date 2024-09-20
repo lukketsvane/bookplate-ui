@@ -1,17 +1,17 @@
 "use client"
 
 import React, { useState, useEffect, useRef } from 'react'
-import { useFloating, autoUpdate, offset, flip, shift, arrow } from '@floating-ui/react'
+import { useFloating, autoUpdate, offset, flip, shift, arrow, Placement } from '@floating-ui/react-dom'
 
 interface PopperProps {
   children: React.ReactNode
   content: React.ReactNode
-  placement?: 'top' | 'bottom' | 'left' | 'right'
+  placement?: Placement
 }
 
 export function Popper({ children, content, placement = 'top' }: PopperProps) {
   const [isOpen, setIsOpen] = useState(false)
-  const arrowRef = useRef(null)
+  const arrowRef = useRef<HTMLDivElement>(null)
 
   const {
     x,
@@ -49,7 +49,7 @@ export function Popper({ children, content, placement = 'top' }: PopperProps) {
     right: 'left',
     bottom: 'top',
     left: 'right',
-  }[placement.split('-')[0]]
+  }[placement.split('-')[0] as 'top' | 'right' | 'bottom' | 'left']
 
   return (
     <>
