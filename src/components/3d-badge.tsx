@@ -141,10 +141,10 @@ export default function ThreeDBadge({ imageUrl, darkMode = true }) {
       </Physics>
       <group rotation={[120, rotationAngle, 90]}>
         <Environment preset="warehouse" background blur={2.75}>
-          <color attach="background" args={[darkMode ? '#00000' : '#00000']} />
+          <color attach="background" args={[darkMode ? '#010101' : '#0a0a0a']} />
         </Environment>
       </group>
-      <OrbitControls enablePan={false} enableZoom={false} minPolarAngle={Math.PI / 2} maxPolarAngle={Math.PI / .2} />
+      <OrbitControls enablePan={false} enableZoom={false} minPolarAngle={Math.PI / 2} maxPolarAngle={Math.PI / 5.2} />
     </Canvas>
   );
 }
